@@ -1,6 +1,6 @@
 public class Exam {
     public String name;
-    public Double score;
+    public Double score; // TODO Change score from double to int, so that the score range is from 0 to 100
     public Double coefficient;
 
     public Exam (String name, Double score, Double coefficient){
