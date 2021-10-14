@@ -1,5 +1,9 @@
+package RMIServerSide.Promotion;
+
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+
+import RMIServerSide.Student.StudentImpl;
 
 public interface PromotionInterface extends Remote{
 
