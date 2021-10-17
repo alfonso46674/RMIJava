@@ -1,10 +1,12 @@
 package RMIServerSide.Promotion;
 
+import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.HashMap;
 
 import RMIServerSide.Student.StudentImpl;
+import RMIServerSide.Student.StudentInterface;
 
 public class PromotionImpl extends UnicastRemoteObject implements PromotionInterface{
 
@@ -22,7 +24,7 @@ public class PromotionImpl extends UnicastRemoteObject implements PromotionInter
         this.students.put(id, new StudentImpl(name, age, id));
     };
 
-    public StudentImpl get_student(String id) throws RemoteException {
+    public StudentInterface get_student(String id) throws RemoteException {
         return this.students.get(id);
     };
 
@@ -37,38 +39,5 @@ public class PromotionImpl extends UnicastRemoteObject implements PromotionInter
         //return the average score for the class
         return class_average / students.size();
     }
-
-    public static void main(String[] args) {
-        try {
-            // create class
-            PromotionImpl classRoom = new PromotionImpl("MathClass");
-            //add students
-            classRoom.add_student("Carlos", 21, "A1");
-            classRoom.add_student("Ashley", 23, "A2");
-            classRoom.add_student("Toby", 19, "A3");
-            //add two exams per students
-            classRoom.students.get("A1").add_exam("Math", 9.0, 0.5);
-            classRoom.students.get("A1").add_exam("English", 4.5, 0.2);
-
-            classRoom.students.get("A2").add_exam("Geography", 8.2, 0.3);
-            classRoom.students.get("A2").add_exam("English", 8.0, 0.1);
-
-            classRoom.students.get("A3").add_exam("Physics", 7.0, 0.6);
-            classRoom.students.get("A3").add_exam("English", 10.0, 0.2);
-
-
-            System.out.println(classRoom.get_student("A1").name + ": " + classRoom.get_student("A1").calculate_average());
-            System.out.println(classRoom.get_student("A2").name + ": " + classRoom.get_student("A2").calculate_average());
-            System.out.println(classRoom.get_student("A3").name + ": " + classRoom.get_student("A3").calculate_average());
-
-            System.out.println(classRoom.name + ": " + classRoom.promotion_score());
-
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
 
 }

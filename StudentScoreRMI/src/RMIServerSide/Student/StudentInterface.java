@@ -14,4 +14,6 @@ public interface StudentInterface extends Remote {
     //Calculates the average score
     public Double calculate_average() throws RemoteException;
 
+    //Return the name parameter
+    String getName() throws RemoteException;
 }

@@ -20,6 +20,22 @@ public class StudentImpl extends UnicastRemoteObject implements StudentInterface
         this.exams = new ArrayList<Exam>();
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", id='" + id + '\'' +
+                ", scores=" + scores +
+                ", exams=" + exams +
+                '}';
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
     // adds an exam to a student. An exam has a name, score and a coefficient
     public void add_exam(String name, Double score, Double coefficient) throws RemoteException {
         Exam exam = new Exam(name, score, coefficient); //TODO create enumeration for the exams name
