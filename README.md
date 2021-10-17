@@ -31,3 +31,6 @@ The interface PromotionInterface.java allows to:
 
 
 ## 3. Matrix Multiplication
+Matrix multiplication is an important operation of linear algebra. It is widely used in many systems and sometimes
+it is expensive for some applications when size is large.
+The goal is to implement a distributed application using JAVA RMI to reduce the ecost of the calculation of this operation.

@@ -9,6 +9,7 @@ public class MatrixImpl extends UnicastRemoteObject implements MatrixInterface {
         super();
     }
 
+    //TODO use threads to reduce cost operation
     @Override
     public int[][] multiply_matrix(int[][] A, int[][] B, int rowA, int colA, int rowB, int colB) throws RemoteException {
 
