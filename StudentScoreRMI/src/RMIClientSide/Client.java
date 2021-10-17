@@ -41,8 +41,8 @@ public class Client {
 
 
             //calculate the promotions average
-            System.out.print("\nPromotion average");
-            System.out.print("Average: " + promotion.promotion_score());
+            System.out.println("\nPromotion average");
+            System.out.println("Average: " + promotion.promotion_score());
 
         }catch (Exception e){
             e.printStackTrace();

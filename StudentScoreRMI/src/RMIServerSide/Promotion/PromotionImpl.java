@@ -10,11 +10,10 @@ import RMIServerSide.Student.StudentInterface;
 
 public class PromotionImpl extends UnicastRemoteObject implements PromotionInterface{
 
-    public String name;
+
     public HashMap<String,StudentImpl> students;
 
-    public PromotionImpl(String name) throws RemoteException{
-        this.name = name;
+    public PromotionImpl() throws RemoteException{
         this.students = new HashMap<String, StudentImpl>();
     }
 

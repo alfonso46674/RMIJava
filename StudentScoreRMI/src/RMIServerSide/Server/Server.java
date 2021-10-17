@@ -16,7 +16,7 @@ public class Server extends UnicastRemoteObject {
         try{
             //Must start the rmiRegistry before trying to run the server file, for that we can execute the startServer.bat file
             //Register the Promotion object in the rmi registry
-            Naming.rebind("//localhost/promotion",new PromotionImpl("Math"));
+            Naming.rebind("//localhost/promotion",new PromotionImpl());
             System.err.println("Server ready");
 
 
