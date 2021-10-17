@@ -31,16 +31,4 @@ public class MatrixImpl extends UnicastRemoteObject implements MatrixInterface {
         }
         return C;
     }
-
-    @Override
-    public void display_matrix(int[][] matrix) throws RemoteException {
-        for(int[] row : matrix){
-            for(int column : row){
-                System.out.print(column + "  ");
-            }
-            System.out.println();
-        }
-    }
-
-   
 }
